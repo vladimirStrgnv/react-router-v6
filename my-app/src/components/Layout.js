@@ -1,14 +1,16 @@
-import { Link, Outlet } from 'react-router-dom';
-
+import { Outlet } from 'react-router-dom';
+import CustomLink from './CustomLink';
 import React from 'react';
+
+const setActive = ({isActive}) => isActive ? 'active-link': '';
 
 const Layout = () => {
     return (
         <div>
             <header >
-                <Link to="/">Home</Link>
-                <Link to="/blog">Blog</Link>
-                <Link to="/about">About</Link>
+                <CustomLink to="/" >Home</CustomLink>
+                <CustomLink to="/blog" >Blog</CustomLink>
+                <CustomLink to="/about" >About</CustomLink>
             </header>
             <Outlet></Outlet>
             <footer>2023</footer>
@@ -16,4 +18,4 @@ const Layout = () => {
     )
 }
 
-export default Layout
+export default Layout;
